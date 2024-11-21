@@ -2,19 +2,16 @@ use actix_web::web::Data;
 use actix_web::{App, HttpServer};
 use dotenv::dotenv;
 use sqlx::SqlitePool;
-
-mod note;
-mod handlers;
 mod routes;
+mod handlers;
+mod models;
+mod db;
 
-/*
-        This code creates a basic server using Actix Web, connected to a SQLite database.
-*/
-#[actix_web::main] //  Actix Web entry point
+#[actix_web::main]
 async fn main() -> std::io::Result<()> {
     dotenv().ok();
     let database_url = &std::env::var("DATABASE_URL").expect("DATABASE_URL must be set");
-    let pool = SqlitePool::connect(&database_url).await
+    let pool = SqlitePool::connect(database_url).await
         .expect("Failed to connect to database");
     HttpServer::new(move || {
         App::new()

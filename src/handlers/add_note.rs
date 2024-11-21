@@ -1,4 +1,4 @@
-use crate::note::{NewNote, Note};
+use crate::models::note::NewNote;
 use actix_web::{web, HttpResponse, Responder};
 use serde::Serialize;
 use sqlx::SqlitePool;
@@ -8,14 +8,6 @@ pub struct CreatedNote {
     pub id: i32,
     pub title: String,
     pub content: String,
-}
-
-pub async fn get_notes(pool: web::Data<SqlitePool>) -> HttpResponse {
-    let notes: Vec<Note> = sqlx::query_as!(Note, "SELECT id, title, content FROM notes")
-        .fetch_all(pool.get_ref())
-        .await
-        .unwrap_or_default();   //or empty vec
-    HttpResponse::Ok().json(notes)
 }
 
 pub async fn add_note(pool: web::Data<SqlitePool>, new_note: web::Json<NewNote>) -> impl Responder {
