@@ -1,7 +1,7 @@
 use sqlx::{sqlite::SqlitePool, Pool};
 
 pub async fn init_db() -> Pool<sqlx::Sqlite> {
-    let pool = SqlitePool::connect("sqlite:note_service.db").await.unwrap();     //TODO unwrap -> panic!
+    let pool = SqlitePool::connect("sqlite:note_service.db").await.unwrap();
     sqlx::query(
         "CREATE TABLE IF NOT EXISTS notes (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -10,6 +10,6 @@ pub async fn init_db() -> Pool<sqlx::Sqlite> {
     )
         .execute(&pool)
         .await
-        .unwrap();          //TODO unwrap -> panic!
-    pool        // SqlitePool
+        .unwrap();
+    pool
 }
