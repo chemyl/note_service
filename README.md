@@ -1,7 +1,7 @@
 # backend service
 
-**Note service** is a binary crate written in Rust.
-This is a basic representation of a web service backend structure, designed for use in web applications thanks to its support for WebAssembly.
+**Note service** is a binary crate written in Rust. 
+It is a basic representation of the structure for the web service backend.
 
 ![Rust Version](https://img.shields.io/badge/rust-1.82.0%20-green)
 ![actix-web Version](https://img.shields.io/badge/actix_web-4.0%20-orange)
