@@ -1,9 +1,9 @@
-# backend service
+# backend server
 
 **Note service** is a binary crate written in Rust.
-This is a basic representation of a web service backend structure, designed for use in web applications thanks to its support for WebAssembly.
+This is a basic representation of a backend web-server, designed for use in web applications thanks to its support for WebAssembly.
 
-![Rust Version](https://img.shields.io/badge/rust-1.82.0%20-green)
+![Rust Version](https://img.shields.io/badge/rust-1.83.0%20-green)
 ![actix-web Version](https://img.shields.io/badge/actix_web-4.0%20-orange)
 ![tokio Version](https://img.shields.io/badge/tokio-1.0%20-orange)
 ![sqlx Version](https://img.shields.io/badge/sqlx-0.8.2%20-blue)
