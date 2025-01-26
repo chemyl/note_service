@@ -2,6 +2,7 @@
 name = "note_service"
 version = "0.1.0"
 edition = "2021"
+authors = ["Anatolii Maltsev <https://www.linkedin.com/in/anatolii-maltsev/>"]
 
 [dependencies]
 actix-web = "4.0"
